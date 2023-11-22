@@ -64,6 +64,9 @@ fibonacci_loop:
     # Checking if the counter reached the value inputed by the user
     bge $t3, $t0, exit_code # if counter  >= N then go to exit command 
 
+    
+    j fibonacci_loop #jumping to the starting of loop  until we meet the criteria
+
 
 exit_code: 
     # Exiting  the program once we reach N
