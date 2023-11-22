@@ -39,7 +39,7 @@ fibonacci_sequence:
     #initilizing variable for fibonacci_sequence 
     li $t1, 0   # loading First Fibonacci number to temp register $t1
     li $t2, 1   # loading Second Fibonacci number to temp register $t2
-    li $t3, 2   # loading Counter to keep track of number in fibonacci_sequence
+    li $t3, 0   # loading Counter to keep track of number in fibonacci_sequence
 
     #printing Fibonacci messages 
     li $v0, 4               #loading print code in $v0
@@ -60,9 +60,6 @@ fibonacci_loop:
     move $t2, $t4       # shifing values, $t4(NEW NUMBER) will be stored in $t2
     addi $t3, $t3, 1    # Incrementing the counter of the currect fib_display
 
-    
-    # Checking if the counter reached the value inputed by the user
-    bge $t3, $t0, exit_code # if counter  >= N then go to exit command 
 
     # Printing a space between the  Fibonacci numbers for better Readability 
     li $v0, 11  #11 = system call for printing character 
@@ -70,10 +67,14 @@ fibonacci_loop:
     syscall
 
     
+    # Checking if the counter reached the value inputed by the user
+    bge $t3, $t0, exit_code # if counter  >= N then go to exit command 
+
     j fibonacci_loop #jumping to the starting of loop  until we meet the criteria
 
 
 exit_code: 
+
     # Exiting  the program once we reach N
     li $v0, 10  #loading system call for program exit
     syscall     ##making system call to OS and exiting
