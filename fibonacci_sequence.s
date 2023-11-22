@@ -61,6 +61,26 @@ fibonacci_loop:
     addi $t3, $t3, 1    # Incrementing the counter of the currect fib_display
 
     
+    # Checking if the counter reached the value inputed by the user
+    bge $t3, $t0, exit_code # if counter  >= N then go to exit command 
+
+
+exit_code: 
+    # Exiting  the program once we reach N
+    li $v0, 10  #loading system call for program exit
+    syscall     ##making system call to OS and exiting
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
