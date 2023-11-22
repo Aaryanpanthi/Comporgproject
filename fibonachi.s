@@ -26,3 +26,10 @@ input_loop:
     bge $t0, 25, fibonacci_sequence #bge = branch on greater than or equal , if the number is greater than the immediate value 25 it will call function fibonacci_sequence
 
     
+    # if the number is less than 25 then printing error message
+    li $v0, 4   #loading print in $v0
+    la $a0, error_display #loading the address of error message 
+    syscall
+    j input_loop #calling loop for user to input right number 
+
+
