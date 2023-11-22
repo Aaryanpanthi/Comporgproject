@@ -33,3 +33,14 @@ input_loop:
     j input_loop #calling loop for user to input right number 
 
 
+#startring fibonacci_sequence
+
+fibonacci_sequence:
+    #initilizing variable for fibonacci_sequence 
+    li $t1, 0   # loading First Fibonacci number to temp register $t1
+    li $t2, 1   # loading Second Fibonacci number to temp register $t2
+    li $t3, 2   # loading Counter to keep track of number in fibonacci_sequence
+
+
+
+
