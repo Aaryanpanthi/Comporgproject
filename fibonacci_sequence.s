@@ -64,6 +64,11 @@ fibonacci_loop:
     # Checking if the counter reached the value inputed by the user
     bge $t3, $t0, exit_code # if counter  >= N then go to exit command 
 
+    # Printing a space between the  Fibonacci numbers for better Readability 
+    li $v0, 11  #11 = system call for printing character 
+    li $a0, 32  # ASCII code for space
+    syscall
+
     
     j fibonacci_loop #jumping to the starting of loop  until we meet the criteria
 
