@@ -75,6 +75,11 @@ fibonacci_loop:
 
 exit_code: 
 
+    li $v0, 1       # loading 1 to  $v0 , indicating the print integer code = 1
+    move $a0, $t1   # Loading  the current Fibonacci number into $a0
+    syscall         # Performing the system call to print the integer in $a0
+
+
     # Exiting  the program once we reach N
     li $v0, 10  #loading system call for program exit
     syscall     ##making system call to OS and exiting
