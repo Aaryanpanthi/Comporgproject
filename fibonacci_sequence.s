@@ -1,3 +1,9 @@
+
+
+#final MIPS code to check the valid number in STEP 1 and print the fibonacci numbers for STEP 2 
+
+
+
 .data               #initializing static variables
 prompt:             .asciiz "Enter an integer (N >= 25): "
 error_display:      .asciiz "Illegal Number! Please Write valid numbers i.e (N >= 25) \n"
@@ -74,6 +80,8 @@ fibonacci_loop:
 
 
 exit_code: 
+
+    #priting the last number of fibonacci sequence before exiting
 
     li $v0, 1       # loading 1 to  $v0 , indicating the print integer code = 1
     move $a0, $t1   # Loading  the current Fibonacci number into $a0
