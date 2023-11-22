@@ -50,11 +50,26 @@ fibonacci_sequence:
 fibonacci_loop:
     # Printing the current Fibonacci number
     li $v0, 1       # loading 1 to  $v0 , indicating the print integer code = 1
-    move $a0, $t1    # Loading  the current Fibonacci number into $a0
+    move $a0, $t1   # Loading  the current Fibonacci number into $a0
     syscall         # Performing the system call to print the integer in $a0
 
 
+    #calclating the next fibonacci_sequence
+    add $t4, $t1, $t2   # $t4 = $t1 + $t2, adding last two values to create new fibonacci number 
+    move $t1, $t2       # shifing values, $t2 will be stored in $t1
+    move $t2, $t4       # shifing values, $t4(NEW NUMBER) will be stored in $t2
+    addi $t3, $t3, 1    # Incrementing the counter of the currect fib_display
+
     
+
+
+
+
+
+
+
+
+
 
 
 
