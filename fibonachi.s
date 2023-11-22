@@ -19,4 +19,10 @@ input_loop:
 
     #reading the input by the user
     li $v0, 5      #code 5 = reading input, which is loaded in $v0 using li (loding immediate)
-    syscall         #makind system call to OS
+    syscall         #making system call to OS
+    move $t0, $v0    # Storeing input in temp register $t0 
+
+    #checking if number is greater than 25 or not
+    bge $t0, 25, fibonacci_sequence #bge = branch on greater than or equal , if the number is greater than the immediate value 25 it will call function fibonacci_sequence
+
+    
