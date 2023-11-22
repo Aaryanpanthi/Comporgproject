@@ -36,6 +36,7 @@ input_loop:
 #startring fibonacci_sequence
 
 fibonacci_sequence:
+    #initilizing variable for fibonacci_sequence 
     li $t1, 0   # loading First Fibonacci number to temp register $t1
     li $t2, 1   # loading Second Fibonacci number to temp register $t2
     li $t3, 2   # loading Counter to keep track of number in fibonacci_sequence
@@ -46,7 +47,15 @@ fibonacci_sequence:
     syscall 
 
 
-fibonacci_loop: 
+fibonacci_loop:
+    # Printing the current Fibonacci number
+    li $v0, 1       # loading 1 to  $v0 , indicating the print integer code = 1
+    move $a0, $t1    # Loading  the current Fibonacci number into $a0
+    syscall         # Performing the system call to print the integer in $a0
+
+
+    
+
 
 
 
